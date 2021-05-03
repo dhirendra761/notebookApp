@@ -1,38 +1,20 @@
+body{
+  background-color: #efedec;
+}
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2em;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.editor{
+  margin-right: 8em;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.bg-lightBlue{
+  background-color:#7b8cb7!important;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline{
+  min-height: 300px;
 }
