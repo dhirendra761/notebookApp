@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -41,18 +41,20 @@ function App() {
   }
 
 
-  return (<div>
+  return (<React.Fragment>
     <h2 className="text-center m-2"> Notebook Editor</h2>
     <div className="App">
      
       <div className="editor">
         <CKEditor
+          
           editor={ClassicEditor}
           data={paragraph}
           onBlur={(event, editor) => {
             const data = editor.getData();
             setParagraph(data?.replace(/<[^>]+>/g, '')?.trim())
-          }} />
+          }} 
+          data-testid="chediter"/>
       </div>
       <div>
         <span> Match word: <input type="text" value={word} onChange={(e) => setWord(e.target.value)} /></span>
@@ -65,7 +67,7 @@ function App() {
         </div>}
       </div>
     </div>
-    </div>
+    </React.Fragment>
   );
 }
 
